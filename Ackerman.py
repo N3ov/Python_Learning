@@ -1,20 +1,27 @@
+import sys
+sys.setrecursionlimit(9000000)
+
+count = 0
+
 
 def ack(m, n):
+    global count
 
     if m == 0:
-
+        count += 1
         return n + 1
 
     elif m > 0 and n == 0:
-
+        count += 1
         return ack(m - 1, 1)
 
-    elif m > 0 and n > 0:
-
+    else:
+        count += 1
         return ack(m - 1, ack(m, n - 1))
 
+print(ack(4, 2))
+print(count)
 
-print(ack(1, 3))
 
 
 # def A(m, n):
@@ -46,3 +53,8 @@ print(ack(1, 3))
 #
 #
 # print(ackermann(2, 2))
+
+
+
+
+
